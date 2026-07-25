@@ -1,5 +1,5 @@
 <?php 
-    require_once 'montar_perguntas.php';
+    require_once 'php/montar_perguntas.php';
     session_start();
     
 ?>
@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="css/style1.css">
     <title>MathCard</title>
 </head>
 
@@ -59,11 +59,16 @@
         </div>
     </div>
     <button id="btnMute">🔊</button>
-    <script src="audio.js"></script>
+    <script src="js/audio.js"></script>
     <script>
         const questoes = <?php echo json_encode($todasPerguntas); ?>;
     </script>
-    <script src="script.js"></script>
+    <script src="js/mensagens.js"></script>
+    <script src="js/pontuacao.js"></script>
+    <script src="js/cronometro.js"></script>
+    <script src="js/perguntas.js"></script>
+    <script src="js/cartas.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
