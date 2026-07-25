@@ -16,4 +16,4 @@ try {
 }
 ?>
 
-// $dsn = Data Source Name
+<!-- $dsn = Data Source Name -->

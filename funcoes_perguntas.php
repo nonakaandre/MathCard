@@ -1,5 +1,4 @@
 <?php 
-require_once 'conexao.php';
 
 function buscaPerguntasPorNivel($pdo, $nivel) { 
 
@@ -14,11 +13,4 @@ $resultado[$indice]["alternativas"] = $alternativasDecodificadas;
 
 return $resultado;
 }
-
-$perguntasFund = buscaPerguntasPorNivel($pdo, 'fundamental');
-$perguntasMed = buscaPerguntasPorNivel($pdo, 'medio');
-$perguntasSup = buscaPerguntasPorNivel($pdo, 'superior');
-$todasPerguntas = array_merge($perguntasFund, $perguntasMed, $perguntasSup);
-
-var_dump($perguntasFund,"\n", $perguntasMed,"\n", $perguntasSup);
 ?>

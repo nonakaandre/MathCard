@@ -1,4 +1,5 @@
 <?php 
+    require_once 'montar_perguntas.php';
     session_start();
     
 ?>
@@ -35,8 +36,7 @@
          <div class="resposta">
             <form id="formResposta">
                 <input type="number" id="respostaInput" placeholder="Resposta" step="0.1" select>
-                <input type="submit" value="Enviar" onclick="verificarResposta()" id="btnEnviar">
-               
+                <input type="submit" value="Enviar"  id="btnEnviar">
             </form>
         </div> 
         <div id= "mensagemResposta">
@@ -60,6 +60,9 @@
     </div>
     <button id="btnMute">🔊</button>
     <script src="audio.js"></script>
+    <script>
+        const questoes = <?php echo json_encode($todasPerguntas); ?>;
+    </script>
     <script src="script.js"></script>
 </body>
 

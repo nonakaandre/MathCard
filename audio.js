@@ -11,7 +11,7 @@ class AudioManager {
     // Método para tocar efeitos sonoros
     playSfx(source) {
         const som = new Audio(source);
-        som.volume = 0.2; // Ajuste o volume do efeito sonoro conforme necessário
+        som.volume = 0.1; // Ajuste o volume do efeito sonoro conforme necessário
         som.play().then(() => {
             console.log('Efeito sonoro iniciado');
         }).catch((error) => {
