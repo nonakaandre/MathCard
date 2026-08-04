@@ -1,8 +1,8 @@
 <?php 
 session_start();
-require_once 'php/montar_perguntas.php';
 require_once('php/conexao.php');
 require_once('php/funcoes_ranking.php');
+require_once 'php/montar_perguntas.php';
 
 $top3 = buscarRanking($pdo, 3);
     
@@ -29,6 +29,7 @@ $top3 = buscarRanking($pdo, 3);
                 <h3 id="tituloQuestao" class="TituloQuest">Questão 1:</h3>
                 <p id="pergunta" class="pergunta"></p>
                 <p id="DicaPergunta" class="dica" style="color: gray;"></p>
+                <div id="ranking"></div>
                 <div id="alternativas"></div>
             </div>
             <div class="tabela">
