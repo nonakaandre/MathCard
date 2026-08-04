@@ -1,6 +1,7 @@
 let cartaDicaUsada = false;
 let cartaMultUsada = false;
 let cartaPularUsada = false;
+let cartaTempoUsada = false;
 
 function usarDica() {
     if (cartaDicaUsada) {
@@ -35,6 +36,28 @@ function usarPular() {
     mostrarQuestao();
 
     document.getElementById("btnSkip").classList.add("usada");
+
+}
+
+function usarTempo() {
+
+    if (cartaTempoUsada) {
+        alert("Você já usou esta carta!");
+        return;
+    }
+
+    audioManager.playSfx('assets/audio/tempo.mp3');
+    cartaTempoUsada = true;
+
+    addTempo();
+    
+    document.getElementById("DicaPergunta").innerText = "Tempo extra foi adicionado!!";
+
+    setTimeout(() => {
+        document.getElementById("DicaPergunta").remove("innerHTML");
+    }, 2500 );
+
+    document.getElementById("btnTempo").classList.add("usada");
 
 }
 
@@ -105,5 +128,29 @@ function verificarRespostaMultipla(respostaEscolhida) {
         }, "erro");
 
         // alert("Errado!");
+    }
+
+}
+
+
+let cartasArmadas = { dica: false, mult: false, pular: false, tempo: false };
+const idsCartas = { dica: "btnDica", mult: "btnMult", pular: "btnSkip", tempo: "btnTempo"};
+
+function confirmarUsoCarta(nomeCarta, funcaoOriginal) {
+    const idCarta = idsCartas[nomeCarta];
+
+    if (cartasArmadas[nomeCarta]) {
+
+        cartasArmadas[nomeCarta] = false;
+        document.getElementById(idCarta).classList.remove("armada");
+        funcaoOriginal();
+    } else {
+        cartasArmadas[nomeCarta] = true;
+        document.getElementById(idCarta).classList.add("armada");
+        setTimeout(() => {
+            cartasArmadas[nomeCarta] = false;
+            document.getElementById(idCarta).classList.remove("armada");
+
+        }, 2000);
     }
 }

@@ -23,6 +23,12 @@ body {
   z-index: 2;
 }
 
+.form-container input[type="text"] {
+  margin-bottom: 20px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .form-container input[type="email"] {
   margin-bottom: 20px;
   border-bottom-right-radius: 0;

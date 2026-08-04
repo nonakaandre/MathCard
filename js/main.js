@@ -11,3 +11,5 @@ document.getElementById('btnMute').addEventListener('click', function () {
     audioManager.toggleMute();
     this.textContent = audioManager.muted ? '🔇' : '🔊';
 });
+
+ 

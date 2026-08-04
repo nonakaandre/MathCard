@@ -20,6 +20,14 @@ function mostrarQuestao() {
         texto.innerText = "Você respondeu todas as questões.";
 
         document.querySelector(".resposta").style.display = "none";
+
+        clearInterval(cronometro);
+
+        fetch('php/salvar_pontuacao.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pontuacao: pontuacao })
+        });
     }
 
 }

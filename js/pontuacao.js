@@ -13,15 +13,16 @@ function atualizarNivel() {
     if (indiceAtual >= 10) {
 
         nivel = "Avançado";
+        reiniciarCronometro(60);
 
     } else if (indiceAtual >= 5) {
 
         nivel = "Intermediário";
-
+        reiniciarCronometro(45);
     } else {
 
         nivel = "Iniciante";
-
+        reiniciarCronometro(30);
     }
 
     document.getElementById("nivel").innerText = nivel;

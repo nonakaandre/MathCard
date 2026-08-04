@@ -1,6 +1,11 @@
 <?php 
 session_start();
-$_SESSION['nome'] = ($_POST['nome']) ; 
+
+if (!isset($_SESSION["id"])) {
+    header("Location: index.php");
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
@@ -20,7 +25,7 @@ $_SESSION['nome'] = ($_POST['nome']) ;
             style="width: 40rem; ">
             <div class="card-body text-center">
                 <h1 class="card-title">Bem-vindo ao MathCard
-                    <?php echo $_SESSION['nome']; ?>
+                    <?= htmlspecialchars($_SESSION['nome']) ?> 
                 </h1>
 
                 <p class="card-text">
@@ -38,7 +43,6 @@ $_SESSION['nome'] = ($_POST['nome']) ;
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" src="script.js">
-        
     </script>
 </body>
 

@@ -1,6 +1,10 @@
 <?php 
-    require_once 'php/montar_perguntas.php';
-    session_start();
+session_start();
+require_once 'php/montar_perguntas.php';
+require_once('php/conexao.php');
+require_once('php/funcoes_ranking.php');
+
+$top3 = buscarRanking($pdo, 3);
     
 ?>
 <!DOCTYPE html>
@@ -30,6 +34,9 @@
             <div class="tabela">
                 <span>Pontos: <span id="score">0</span></span>
                 <span>Tempo: <span id="tempo">30</span></span>
+                <div id="barraTempoContainer"> 
+                    <div id="barraTempo"></div>
+                </div>
                 <span>Nível: <span id="nivel">Iniciante</span></span>
             </div>
         </div>
@@ -43,14 +50,17 @@
             <p></p>
         </div>
         <div class="cartas">
-            <div class="carta" id="btnDica" onclick="usarDica()">
+            <div class="carta" id="btnDica" onclick="confirmarUsoCarta('dica', usarDica)">
                 Dica
             </div>
-            <div class="carta" id="btnMult" onclick="usarMult()">
+            <div class="carta" id="btnMult" onclick="confirmarUsoCarta('mult', usarMult)">
                 MultiEscolha
             </div>
-            <div class="carta" id="btnSkip" onclick="usarPular()">
+            <div class="carta" id="btnSkip" onclick="confirmarUsoCarta('pular', usarPular)">
                 Pular
+            </div>
+            <div class="carta" id="btnTempo" onclick="confirmarUsoCarta('tempo', usarTempo)">
+                Tempo++
             </div>
         </div>
         <div id="dica"></div>

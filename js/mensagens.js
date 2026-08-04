@@ -11,6 +11,5 @@ function mostrarMensagem(texto, callback, estilo) {
         callback();
         document.getElementById("mensagemResposta").classList.remove(estilo);
     }, 2000);
-
-
 }
+
