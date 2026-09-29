@@ -11,9 +11,11 @@ function usarDica() {
 
     cartaDicaUsada = true;
 
-    pontuacao_dica = true;
+    let pontuacao_dica = true;
 
-    // document.getElementById("DicaPergunta").innerText = questoes[indiceAtual].dica;
+    //document.getElementById("DicaPergunta").innerText = questoes[indiceAtual].dica;
+
+    document.getElementById("btnDica").classList.add("usada","usadaDica");
 
     document.getElementById("btnDica").innerHTML = questoes[indiceAtual].dica;
 
@@ -50,12 +52,12 @@ function usarTempo() {
     cartaTempoUsada = true;
 
     addTempo();
-    
+
     document.getElementById("DicaPergunta").innerText = "Tempo extra foi adicionado!!";
 
     setTimeout(() => {
-        document.getElementById("DicaPergunta").remove("innerHTML");
-    }, 2500 );
+        document.getElementById("DicaPergunta").innerText = "";
+    }, 2500);
 
     document.getElementById("btnTempo").classList.add("usada");
 
@@ -134,7 +136,7 @@ function verificarRespostaMultipla(respostaEscolhida) {
 
 
 let cartasArmadas = { dica: false, mult: false, pular: false, tempo: false };
-const idsCartas = { dica: "btnDica", mult: "btnMult", pular: "btnSkip", tempo: "btnTempo"};
+const idsCartas = { dica: "btnDica", mult: "btnMult", pular: "btnSkip", tempo: "btnTempo" };
 
 function confirmarUsoCarta(nomeCarta, funcaoOriginal) {
     const idCarta = idsCartas[nomeCarta];

@@ -1,0 +1,76 @@
+<svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#1e3a34"/>
+      <stop offset="55%" stop-color="#0f2922"/>
+      <stop offset="100%" stop-color="#0a1f1a"/>
+    </radialGradient>
+
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(132, 204, 22, 0.55)"/>
+      <stop offset="100%" stop-color="rgba(139, 92, 246, 0.25)"/>
+    </linearGradient>
+
+    <radialGradient id="clockGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(132, 204, 22, 0.35)"/>
+      <stop offset="100%" stop-color="rgba(132, 204, 22, 0)"/>
+    </radialGradient>
+
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <pattern id="starsPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="8" r="0.7" fill="rgba(190,242,100,0.3)"/>
+      <circle cx="24" cy="18" r="0.5" fill="rgba(190,242,100,0.2)"/>
+      <circle cx="33" cy="4" r="0.6" fill="rgba(190,242,100,0.25)"/>
+      <circle cx="14" cy="30" r="0.5" fill="rgba(190,242,100,0.18)"/>
+      <circle cx="36" cy="34" r="0.7" fill="rgba(190,242,100,0.28)"/>
+    </pattern>
+  </defs>
+
+  <!-- Corpo da carta -->
+  <rect x="4" y="4" width="192" height="272" rx="14" fill="url(#bgGradient)" stroke="url(#borderGradient)" stroke-width="2"/>
+
+  <!-- Textura de estrelas -->
+  <rect x="4" y="4" width="192" height="272" rx="14" fill="url(#starsPattern)"/>
+
+  <!-- Moldura interna -->
+  <rect x="14" y="14" width="172" height="252" rx="10" fill="none" stroke="rgba(132, 204, 22, 0.35)" stroke-width="1.5"/>
+
+  <!-- Brilho por trás do relógio -->
+  <circle cx="100" cy="115" r="70" fill="url(#clockGlow)"/>
+
+  <!-- Ícone de relógio com "+" -->
+  <g transform="translate(100, 115)">
+    <circle cx="0" cy="0" r="46" fill="none" stroke="#bef264" stroke-width="4"/>
+    <circle cx="0" cy="-52" r="5" fill="#0f2922" stroke="#bef264" stroke-width="2.5"/>
+
+    <!-- Ponteiros -->
+    <line x1="0" y1="0" x2="0" y2="-26" stroke="#bef264" stroke-width="4" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="18" y2="8" stroke="#bef264" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="4" fill="#bef264"/>
+
+    <!-- Marcadores das horas -->
+    <line x1="0" y1="-40" x2="0" y2="-34" stroke="#bef264" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="40" x2="0" y2="34" stroke="#bef264" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-40" y1="0" x2="-34" y2="0" stroke="#bef264" stroke-width="3" stroke-linecap="round"/>
+    <line x1="40" y1="0" x2="34" y2="0" stroke="#bef264" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Símbolo de "+" flutuando no canto, indicando acréscimo -->
+    <g transform="translate(38, -38)">
+      <circle cx="0" cy="0" r="17" fill="#0f2922" stroke="#bef264" stroke-width="2.5"/>
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#bef264" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#bef264" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Selo do nome da carta -->
+  <g transform="translate(100, 218)">
+    <rect x="-72" y="-16" width="144" height="32" rx="16" fill="rgba(15, 41, 34, 0.85)" stroke="#bef264" stroke-width="1.5"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="18" font-weight="700" fill="#bef264" letter-spacing="2">TEMPO++</text>
+  </g>
+
+  <!-- Brilho superior -->
+  <ellipse cx="100" cy="30" rx="70" ry="18" fill="rgba(132, 204, 22, 0.12)" filter="url(#softBlur)"/>
+</svg>

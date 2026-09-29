@@ -61,7 +61,7 @@ $top3 = buscarRanking($pdo, 3);
                 Pular
             </div>
             <div class="carta" id="btnTempo" onclick="confirmarUsoCarta('tempo', usarTempo)">
-                Tempo++
+                
             </div>
         </div>
         <div id="dica"></div>

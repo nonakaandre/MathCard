@@ -22,7 +22,7 @@ function atualizarNivel() {
     } else {
 
         nivel = "Iniciante";
-        reiniciarCronometro(30);
+        reiniciarCronometro(30000);
     }
 
     document.getElementById("nivel").innerText = nivel;
