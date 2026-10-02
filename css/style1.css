@@ -274,10 +274,13 @@ O que é @keyframes
 É a forma do CSS de definir uma animação com múltiplos estágios ao longo do tempo — diferente do transition que você já usou (que só anima de um estado pra outro, tipo "do verde pro vermelho"), @keyframes permite descrever uma sequência completa, incluindo voltar ao início e repetir*/
 
 @keyframes pulsarArmada {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
         transform: scale(1);
     }
+
     50% {
         box-shadow: 0 0 25px rgba(139, 92, 246, 1);
         transform: scale(1.03);
@@ -308,13 +311,21 @@ O que é @keyframes
 }
 
 #btnTempo {
-    background: url();
+    background: url(../assets/imagens/mathcard_bonus_tempoextra.svg);
+    background-size: cover;
+
+    background-repeat: no-repeat;
 }
 
 .usada {
     background: url(../assets/imagens/carta-usada.svg);
-    opacity: 0.5;
     cursor: not-allowed;
+}
+
+.usadaDica {
+    
+    font-size: 1.4rem;
+
 }
 
 #alternativas {
